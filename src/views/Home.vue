@@ -1,18 +1,49 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<main id="home">
+  <section>
+    <img src="../assets/slice-logo-black.png" alt="Slice logo">
+  </section>
+  <section>
+    <a href="#" class="btn">Im hungry!</a>
+  </section>
+</main>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
+  name: 'home'
 }
 </script>
+<style lang="scss">
+
+@import '../scss/components';
+
+%center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+
+  section {
+    flex: 1;
+    @extend %center;
+
+    img {
+      width: 16rem;
+    }
+
+    &:last-child {
+      align-items: flex-end;
+      padding: 1rem;
+    }
+  }
+}
+
+// #home section img { }
+
+</style>
