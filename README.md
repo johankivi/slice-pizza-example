@@ -1,5 +1,5 @@
 # slice
-## Ett exempelprojekt i Veu.js + Express Js + Firebase.
+## Ett exempelprojekt i Vue.js, Node, Express & Firebase.
 ```
 ## Project setup
 ```
