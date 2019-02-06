@@ -4,7 +4,7 @@
     <img src="../assets/slice-logo-black.png" alt="Slice logo">
   </section>
   <section>
-    <a href="#" class="btn">Im hungry!</a>
+    <a href="#" class="btn" @click="$router.push('/menu')">Im hungry!</a>
   </section>
 </main>
 </template>

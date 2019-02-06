@@ -23,7 +23,7 @@ export default new Vuex.Store({
   },
   actions: {
     async getMenu(ctx){
-      let menu = await axios.get('http://localhost:3001/menu');
+      let menu = await axios.get('http://localhost:3000/menu');
 
       let Arr = menu.data.menu;
 
@@ -33,6 +33,18 @@ export default new Vuex.Store({
        beverages: Arr.filter(item => item.type == 'dryck')
       })
 
+    }
+  },
+  getters: {
+    confirm(ctx){
+
+      let data = {
+        items: ctx.order,
+        service: 99,
+        totalCost: ctx.order.map(a => a.price).reduce((a,b) => { return a + b }) + 99
+      }
+
+      return data;
     }
   }
 })

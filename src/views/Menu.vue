@@ -2,9 +2,6 @@
 <main id="menu">
     <header>
         <h1>Order ( {{ order.length }} )</h1>
-        <aside class="cart">
-            <div class="badge">3</div>
-        </aside>
     </header>
     <section class="menu">
     <h2>Pizzor</h2>
@@ -16,7 +13,7 @@
     <h2>Drycker</h2> 
     <menu-item v-for="item in menu.beverages" :key="item.id" :item="item" />
 
-    <a href="#" class="btn" @click="sendOrder">Köp!</a>
+    <a href="#" class="btn" @click="$router.push('/confirm')">Klar!</a>
 
     </section>
 
@@ -31,20 +28,11 @@ export default {
     name: 'menu',
     data(){
         return {
-            hej: 'hå'
+
         }
     },
     methods: {
-        async sendOrder(){
-
-            let resp = await this.$http.post('http://localhost:3001/orders', this.$store.state.order);
-
-            if(resp.status == 200){ 
-                // sucess
-            } else {
-                // failed
-            }
-        }
+    
     },
     components: {
         menuItem
