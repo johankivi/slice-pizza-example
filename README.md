@@ -1,5 +1,6 @@
 # slice
-
+## Ett exempelprojekt i Veu.js + Express Js + Firebase.
+```
 ## Project setup
 ```
 npm install
