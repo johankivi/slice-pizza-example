@@ -76,6 +76,7 @@ export default {
     }
 
     h1 {
+
         &.big {
         text-align: center;
         text-transform: uppercase;
@@ -83,13 +84,17 @@ export default {
     }
 
     .confirm {
-        border: 1px solid #eee;
+        border: 1px solid rgba(0, 0, 0, .2);
         border-radius: 3px;
         margin: 1rem;
 
         article {
             display: flex;
             padding: 1rem;
+
+            &:nth-child(2n) {
+                background: rgba(0, 0, 0, .03);
+            }
 
             section {
                 display: flex;
@@ -121,19 +126,16 @@ export default {
             }
 
             &.service {
-                background: rgba(0, 0, 0, .05);
+                background: rgba(0, 0, 0, .1);
             }
 
             &.total {
                 border-top: 1px dotted rgba(0, 0, 0, .4);
-                background: rgba(0, 0, 0, .1);
+                background: rgba(0, 0, 0, .2);
                 font-weight: 700;
             }
-        
         }
     }
 }
-
-
 
 </style>
