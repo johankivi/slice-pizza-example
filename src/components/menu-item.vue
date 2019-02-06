@@ -56,7 +56,16 @@ export default {
                 font-size: .8rem;
             }
         }
+
+        img:active {
+            animation: flash .3s;
+        }
     }
 }
+
+        @keyframes flash {
+            from { transform: scale(1.0) rotateZ(0deg);  }
+              to { transform: scale(1.2) rotateZ(90deg); }
+        }
 
 </style>

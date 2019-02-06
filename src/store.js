@@ -11,7 +11,8 @@ export default new Vuex.Store({
       salads: [],
       beverages: []
     },
-    order: []
+    order: [],
+    confirmedOrder: {}
   },
   mutations: {
     setMenu(state, menu){
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     },
     addItem(state, item){
       state.order.push(item);
+    },
+    setConfirmedOrder(state, order){
+      state.confirmedOrder = order;
     }
   },
   actions: {
@@ -37,13 +41,16 @@ export default new Vuex.Store({
   },
   getters: {
     confirm(ctx){
-
-      let data = {
-        items: ctx.order,
-        service: 99,
-        totalCost: ctx.order.map(a => a.price).reduce((a,b) => { return a + b }) + 99
+      
+      let data = { items: [] };
+      
+      if(ctx.order.length){
+        data = {
+          items: ctx.order,
+          service: 99,
+          totalCost: ctx.order.map(a => a.price).reduce((a,b) => { return a + b }) + 99
+        }
       }
-
       return data;
     }
   }

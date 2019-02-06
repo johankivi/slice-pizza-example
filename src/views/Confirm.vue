@@ -5,7 +5,7 @@
         </header>
         <h1 class="big">Din order</h1>
         <section class="confirm">
-            <article v-for="item in confirm.items" :key="item.id">
+            <article v-for="(item, index) in confirm.items" :key="index">
                 <section>
                     <h1>{{ item.name }}</h1>
                     <p>{{ item.desc }}</p>
@@ -45,8 +45,13 @@ export default {
 
             if(resp.status == 200){ 
                 // sucess
-                console.log(resp.data);
-                this.$router.push('/track');
+                console.log('Order successful sent.');
+                
+                // Set active Order i Vuex
+                this.$store.commit('setConfirmedOrder', resp.data)
+
+                // Change view
+                this.$router.push('/tracking');
             } else {
                 // failed
             }
@@ -122,6 +127,7 @@ export default {
             &.total {
                 border-top: 1px dotted rgba(0, 0, 0, .4);
                 background: rgba(0, 0, 0, .1);
+                font-weight: 700;
             }
         
         }

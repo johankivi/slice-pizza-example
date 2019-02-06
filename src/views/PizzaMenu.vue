@@ -1,7 +1,8 @@
 <template>
 <main id="menu">
     <header>
-        <h1>Order ( {{ order.length }} )</h1>
+        <h1>Order</h1>
+        <cart />
     </header>
     <section class="menu">
     <h2>Pizzor</h2>
@@ -23,6 +24,7 @@
 <script>
 
 import menuItem from '@/components/menu-item';
+import cart from '@/components/cart';
 
 export default {
     name: 'menu',
@@ -35,7 +37,8 @@ export default {
     
     },
     components: {
-        menuItem
+        menuItem,
+        cart
     },
     computed: {
         menu(){

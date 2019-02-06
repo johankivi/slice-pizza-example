@@ -12,9 +12,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/menu',
-      name: 'menu',
-      component: () => import('./views/Menu.vue')
+      path: '/pizzamenu',
+      name: 'pizza-menu',
+      component: () => import('./views/PizzaMenu.vue')
     },
     {
       path: '/confirm',
@@ -22,9 +22,9 @@ export default new Router({
       component: () => import('./views/Confirm.vue')
     },
     {
-      path: '/track',
-      name: 'track',
-      component: () => import('./views/Track.vue')
+      path: '/tracking',
+      name: 'tracking',
+      component: () => import('./views/Tracking.vue')
     }
   ]
 })

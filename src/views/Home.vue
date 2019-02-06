@@ -4,7 +4,7 @@
     <img src="../assets/slice-logo-black.png" alt="Slice logo">
   </section>
   <section>
-    <a href="#" class="btn" @click="$router.push('/menu')">Im hungry!</a>
+    <a href="#" class="btn" @click="$router.push('/pizzamenu')">Im hungry!</a>
   </section>
 </main>
 </template>
@@ -38,12 +38,11 @@ export default {
     }
 
     &:last-child {
+      flex: .1;
       align-items: flex-end;
       padding: 1rem;
     }
   }
 }
-
-// #home section img { }
 
 </style>
